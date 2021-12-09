@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page</title>
+    <link rel="stylesheet" href="profil.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+   <!-- Custom fonts for this template-->
+   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+   <link
+       href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+       rel="stylesheet">
+
+   <!-- Custom styles for this template-->
+   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+
+    
+</head>
+<body id="page-top">
+  <div class="loader_bg">
+      <div class="loader"></div>
+  </div>
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+      <!-- Sidebar -->
+      <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #424242;">
+
+          <!-- Sidebar - Brand -->
+          <a class="sidebar-brand d-flex align-items-center justify-content-center mt-5 mb-5" href="index.html">
+              <img id="mrg2"
+                  src="https://cdn.discordapp.com/attachments/732565249634598943/887169425294372884/ide-logo-png-.png"
+                  width="100px" height="100px" class="rounded-circle" alt="Cinque Terre">
+          </a>
+          <!-- Sidebar Toggler (Sidebar) -->
+          <div class="text-center d-none d-md-inline">
+              <button class="rounded-circle border-0" id="sidebarToggle"></button>
+          </div>
+
+          <!-- Divider -->
+          <hr class="sidebar-divider my-0">
+
+          <!-- Nav Item - Dashboard -->
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html"><i class="fas fa-medal"></i><span>หน้าหลัก</span></a>
+            <a class="nav-link" href="Arduino.html"><i class="fas fa-medal"></i><span>ทำความรู้จักกับ
+                    Arduino</span></a>
+            <a class="nav-link" href="Botton.html"><i class="fas fa-medal"></i><span>ตอนที่ 1 Botton</span></a>
+            <a class="nav-link" href="LedFlowing.html"><i class="fas fa-medal"></i><span>ตอนที่ 2 LED Flowing</span></a>
+            <a class="nav-link" href="Buzzer.html"> <i class="fas fa-medal"></i><span>ตอนที่ 3 Buzzer</span></a>
+            <a class="nav-link" href="Poten.html"><i class="fas fa-medal"></i><span>ตอนที่ 4 Potentiometer</span></a>
+            <a class="nav-link" href="Photoresistor.html"><i class="fas fa-medal"></i><span>ตอนที่ 5 Photoresistor</span></a>
+            <a class="nav-link" href="RGB LED.html"><i class="fas fa-medal"></i><span>ตอนที่ 6 RGB LED</span></a>
+            <a class="nav-link" href="Servo.html"><i class="fas fa-medal"></i><span>ตอนที่ 7 Servo</span></a>
+            <a class="nav-link" href="Tilt-Switch.html"><i class="fas fa-medal"></i><span>ตอนที่ 8 Tilt-Switch</span></a>
+            <a class="nav-link" href="Thermistor.html"><i class="fas fa-medal"></i><span>ตอนที่ 9 Thermistor</span></a>
+            <a class="nav-link" href="Light Alarm.html"><i class="fas fa-medal"></i><span>ตอนที่ 10 Light Alarm</span></a>
+            <hr class="sidebar-divider">
+            <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i><span>กลับหน้า Website</span></a>
+        </li>
+
+          <!-- Divider -->
+          <hr class="sidebar-divider">
+
+      </ul>
+      <!-- End of Sidebar -->
+
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column content-2">
+
+          <!-- Main Content -->
+          <div id="content">
+              <!-- Topbar -->
+              <nav class="navbar navbar-expand topbar mb-4 static-top shadow">
+
+                  <!-- Sidebar Toggle (Topbar) -->
+                  <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                      <i class="fa fa-bars"></i>
+                  </button>
+              </nav>
+              <!-- End of Topbar -->
+
+              <!-- Content -->
+              <div class="text-center">
+                  <div class="head-content">
+                      <h1>การใช้งาน Photoresistor</h1>
+                  </div>
+                  <div class="mt-5">
+                      <div class="videoWrapper">
+                          <iframe width="560" height="300" src="https://www.youtube.com/embed/Vbg81kc56FU"
+                              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                      </div>
+                  </div>
+                  <div class="head-body-content">
+                      <h1>ตัวอย่าง CODE</h1>
+                  </div>
+                  <div class="body-content">
+                      <p>int photocellPin = 0;  <br>   
+                        int photocellReading; <br>    
+                        int LEDpin = 9;          <br>
+                        int LEDbrightness;  <br>
+                        
+                        void setup(){<br>
+                          Serial.begin(9600);   <br>
+                        }<br>
+                         
+                        void loop(void) {<br>
+                          photocellReading = analogRead(photocellPin);  <br>
+                          photocellReading = 1023 - photocellReading;<br>
+                          LEDbrightness = map(photocellReading, 0, 1023, 0, 255);<br>
+                          analogWrite(LEDpin, LEDbrightness); <br>
+                          Serial.print("Analog reading = ");<br>
+                          Serial.print(photocellReading);   <br>
+                          if (photocellReading < 10) {<br>
+                            Serial.println(" - Dark");<br>
+                          } <br>
+                          else if (photocellReading < 200) {<br>
+                            Serial.println(" - Dim");<br>
+                          } <br>
+                          else if (photocellReading < 500) {<br>
+                            Serial.println(" - Light");<br>
+                          } <br>
+                          else if (photocellReading < 800) {<br>
+                            Serial.println(" - Bright");<br>
+                          } <br>
+                          else {<br>
+                            Serial.println(" - Very bright");<br>
+                          }<br>
+                           delay(300);<br>
+                        }<br>
+                        </p>
+                  </div>
+              </div>
+              <!-- End Content -->
+          </div>
+          <!-- End of Main Content -->
+      </div>
+      <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                  </button>
+              </div>
+              <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+              <div class="modal-footer">
+                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                  <a class="btn btn-primary" href="login.html">Logout</a>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/chart-area-demo.js"></script>
+  <script src="js/demo/chart-pie-demo.js"></script>
+  <script>
+      setTimeout(function () {
+          $('.loader_bg').fadeToggle();
+      }, 1500);
+  </script>
+
+</body>
+</html>
+
+

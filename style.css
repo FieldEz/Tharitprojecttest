@@ -1,0 +1,140 @@
+html {
+  min-width: 100%;
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+/* Background Page */
+
+.content-1 {
+    background: url(https://i.pinimg.com/originals/e8/b4/ca/e8b4cafebf9c3a684aefc88f132f4de8.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.content-2 {
+    background: url(https://media3.giphy.com/media/BHNfhgU63qrks/giphy.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+/* End Background Page */
+
+/* Content Page */
+.head-main-content{
+    font-size: 2rem;
+}
+
+.head-content {
+    background: rgb(255, 208, 0);
+    width: auto;
+    max-width: 30rem;
+    margin: auto;
+    color: #000000;
+    padding: 3rem
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+    margin: 5rem;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+@media (max-width: 767px) {
+    .videoWrapper {
+        margin: 0;
+        margin-bottom: 6rem;
+    }
+}
+
+.head-body-content {
+    margin-top: 5rem;
+    background: #1a1a1d;
+    width: auto;
+    max-width: 30rem;
+    margin: auto;
+    padding: 1rem
+}
+
+.head-body-content h1{
+    color: #ffffff;
+}
+
+.body-content {
+    margin: auto;
+    background: #ffffff;
+    width: auto;
+    max-width: 60rem;
+    padding: 2rem;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.48);
+    margin-bottom: 10rem
+}
+
+.body-content p{
+    font-size: 2rem;
+    color:#000000;
+}
+
+/* End Content Page */
+
+
+/* Preload */
+
+.loader_bg {
+  position: fixed;
+  z-index: 999999;
+  background: #424242;
+  width: 100%;
+  height: 100%;
+}
+.loader {
+  border: 0 soild transparent;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: calc(49vh - 85px);
+  left: calc(49vw - 85px);
+}
+.loader:before,
+.loader:after {
+  content: "";
+  border: 1em solid #62AEB2;
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: loader 2s linear infinite;
+  opacity: 0;
+}
+.loader:before {
+  animation-delay: 0.5s;
+}
+@keyframes loader {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* End Preload */
